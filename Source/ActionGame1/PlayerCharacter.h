@@ -24,6 +24,10 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<class UCameraComponent> FollowCamera;
 
+	/** FootIK Actor Component */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = IK_Foot, meta = (AllowPrivateAccess = "true"))
+	TObjectPtr<class UCpt_FootIK> FootIK;
+
 	//////////////////////////////////////////////////////////////////////////////////////////
 	// Inputs
 
