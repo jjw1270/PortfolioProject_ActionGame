@@ -78,6 +78,7 @@ protected:
 private:
 	/** Called for movement input */
 	void Move(const FInputActionValue& Value);
+	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	float WalkSpeed;
 
 	/** Called for Sprint input */

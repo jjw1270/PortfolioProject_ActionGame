@@ -38,14 +38,14 @@ APlayerCharacter::APlayerCharacter()
 	// Set Foot bone name to IK Component
 	FootIK->Set_IKSocketName(TEXT("foot_l"), TEXT("foot_r"));
 
-	WalkSpeed = GetCharacterMovement()->MaxWalkSpeed;
 }
 
 // Called when the game starts or when spawned
 void APlayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	WalkSpeed = GetCharacterMovement()->MaxWalkSpeed;
 	//Add Input Mapping Context
 	if (APlayerController* PlayerController = Cast<APlayerController>(Controller))
 	{
@@ -108,9 +108,9 @@ void APlayerCharacter::Move(const FInputActionValue& Value)
 void APlayerCharacter::Sprint()
 {
 	bPressedSprint = true;
-	UE_LOG(LogTemp, Warning, TEXT("Sprint"));
 	if (GetCharacterMovement()->MaxWalkSpeed != SprintSpeed)
 	{
+		UE_LOG(LogTemp, Warning, TEXT("Sprint"));
 		GetCharacterMovement()->MaxWalkSpeed = SprintSpeed;
 	}
 }

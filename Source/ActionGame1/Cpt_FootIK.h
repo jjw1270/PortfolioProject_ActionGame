@@ -39,11 +39,11 @@ class ACTIONGAME1_API UCpt_FootIK : public UActorComponent
 	
 private:
 	UPROPERTY()
-	class ACharacter* m_pCharacter;
+	TObjectPtr<class ACharacter> m_pCharacter;
 
 private:
 	//! Owner Characters capsule height
-	float	m_fIKCapsuleHalkHeight;
+	float m_fIKCapsuleHalkHeight;
 
 	//! IK Anim Instance Value struct
 	FST_IK_AnimValue m_stIKAnimValuse;
@@ -84,6 +84,7 @@ public:
 
 public:
 	UCpt_FootIK();
+
 	virtual void BeginPlay() override;
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
